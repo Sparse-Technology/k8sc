@@ -1557,7 +1557,7 @@ set(HDRS
 )
 
 # Add library with project file with projectname as library name
-add_library(${pkgName} SHARED ${SRCS} ${HDRS})
+add_library(${pkgName} ${BUILD_LIB_AS} ${SRCS} ${HDRS})
 # Link dependent libraries
 target_link_libraries(${pkgName} ${CURL_LIBRARIES} )
 #install library to destination
