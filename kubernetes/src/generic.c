@@ -94,7 +94,7 @@ char* Generic_readResource(genericClient_t *client, const char *name) {
 
 char *Generic_listNamespaced(genericClient_t *client, const char *namespace) {
     char path[128];
-    if (client->apiGroup) {
+    if (client->apiGroup && strlen(client->apiGroup) != 0) {
         snprintf(path, 128, "/apis/%s/%s/namespaces/%s/%s",
                  client->apiGroup, client->apiVersion, namespace, client->resourcePlural);
     } else {
@@ -106,7 +106,7 @@ char *Generic_listNamespaced(genericClient_t *client, const char *namespace) {
 
 char *Generic_list(genericClient_t *client) {
     char path[128];
-    if (client->apiGroup) {
+    if (client->apiGroup && strlen(client->apiGroup) != 0) {
         snprintf(path, 128, "/apis/%s/%s/%s",
                  client->apiGroup, client->apiVersion, client->resourcePlural);
     } else {
