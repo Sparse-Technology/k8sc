@@ -1,4 +1,5 @@
-cmake_minimum_required (VERSION 2.6)
+set(K8S_CMAKE_VERSION 2.6)
+cmake_minimum_required (VERSION ${K8S_CMAKE_VERSION})
 project (CGenerator)
 
 cmake_policy(SET CMP0063 NEW)
